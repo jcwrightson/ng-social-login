@@ -1,5 +1,7 @@
 .idea
 .vscode
+.editorconfig
+
 Thumbs.db
 node_modules
 jspm_packages
