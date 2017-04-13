@@ -1,10 +1,10 @@
-import { Component, Input, Output, EventEmitter, NgZone, OnChanges, ApplicationRef} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { userModel } from '../app.interfaces'
 
 @Component({
   selector: 'user-profile',
   template: `
-    <div class="user-profile" *ngIf="hasProfile">
+    <div class="user-profile" *ngIf="hasProfile()">
       <ul>
         <li><img src="{{user.img}}"/></li>
         <li><label><strong>ID#: </strong></label>{{user.id}}</li>
@@ -17,23 +17,12 @@ import { userModel } from '../app.interfaces'
 
 export class UserProfileComponent  { 
 
-hasProfile:boolean = false;
-
 @Input('user')
-user: userModel;
+private user: userModel;
 
-
-    constructor(public zone : NgZone, public appRef: ApplicationRef){
-      
-    }
-
-    ngOnChanges(){
-        console.log("user recieved: ", this.user);
-
-        if (this.user){
-            this.hasProfile = true
-        }else {
-            this.hasProfile = false
-        }
+    hasProfile(){
+     if (this.user){
+       return true
+      }
     }
 }

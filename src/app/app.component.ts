@@ -7,8 +7,6 @@ import { userModel } from './app.interfaces'
   template: `
   <sign-in (userProfile)="onUser($event)"></sign-in>
   <user-profile [user]="_user"></user-profile>
-  
-  
   `,
 })
 export class AppComponent  { 

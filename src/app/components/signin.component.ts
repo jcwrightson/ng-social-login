@@ -10,32 +10,16 @@ import { userModel } from '../app.interfaces'
 
 export class SigninComponent  { 
 
-signedState: boolean;
-platform: string;
-
 @Output()
-userProfile = new EventEmitter
+private userProfile = new EventEmitter
 
     constructor(public zone : NgZone, public appRef: ApplicationRef){
   
     }
 
-    //Watch for components that emit a user obj
     onUser(user: userModel){
   
         this.userProfile.emit(user);
         console.log('Emitted: ', user);
     }
-
-    signOut() {
-        let self = this;
-
-            gapi.auth2.getAuthInstance()
-                .signOut()
-                .then(()=>{
-                    // self.newUser.emit({});
-            });
-    }
-    
-
 }

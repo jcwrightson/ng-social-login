@@ -5,18 +5,14 @@ import { userModel } from '../app.interfaces'
   selector: 'google-login',
   template: `
   <div id="google-signin" class="g-signin2"></div>
-  <button *ngIf="signedIn" (click)="onSignOut()">Signout</button>`
+  <button *ngIf="signedIn" (click)="onSignOut()">Sign Out</button>`
 })
 
 export class GoogleLoginComponent{ 
 
     signedIn:boolean = false;
 
-    @Output() user = new EventEmitter()
-
-    constructor(){
-       
-    }
+    @Output() user = new EventEmitter(true)
 
     ngOnInit(){
         gapi.signin2.render('google-signin', {
@@ -46,7 +42,7 @@ export class GoogleLoginComponent{
         gapi.auth2.getAuthInstance()
                 .signOut()
                 .then(()=>{
-                    self.user.emit(undefined);
+                    self.user.emit(undefined)
         });
     }
     
