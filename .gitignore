@@ -1,6 +1,6 @@
 .idea
 .vscode
-.Thumbs
+Thumbs.db
 node_modules
 jspm_packages
 npm-debug.log
