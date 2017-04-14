@@ -1,13 +1,13 @@
-#Signin With Google/Facebook/Twitter/Instagram (Angular)
-Component based 'Signin with' oAuth2 module for Angular 4.x
+# ngSocialLogin
+A simple Angular module for enabling social media account login.
 
-##Installation (Npm)
+## Installation (Npm)
 Clone, install, start
 
-##Supports
--Google
+## Supports:
+- Google
 
-In Progress:
--Facebook
--Twitter
--Instagram
+## In Progress:
+- Facebook
+- Twitter
+- Instagram

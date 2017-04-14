@@ -5,6 +5,7 @@ import { userModel } from '../app.interfaces'
   selector: 'sign-in',
   template: `
     <google-login (user)="onUser($event)"></google-login> 
+    
   `,
 })
 
